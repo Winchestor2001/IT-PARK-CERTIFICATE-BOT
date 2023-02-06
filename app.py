@@ -1,5 +1,6 @@
 from aiogram import executor
 
+from handlers.users.users import register_users_py
 from loader import dp
 import middlewares, filters, handlers
 from utils.notify_admins import on_startup_notify
@@ -10,8 +11,7 @@ async def on_startup(dispatcher):
     # Устанавливаем дефолтные команды
     await set_default_commands(dispatcher)
 
-    # Уведомляет про запуск
-    await on_startup_notify(dispatcher)
+    register_users_py(dispatcher)
 
 
 if __name__ == '__main__':
