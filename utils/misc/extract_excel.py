@@ -1,5 +1,8 @@
 import pandas as pd
 
+from utils.misc.make_certificate import draw_certificate
+
+
 # Load the Excel file into a Pandas DataFrame
 # Шаблон-ДХ.xlsx
 
@@ -18,5 +21,7 @@ async def extract_excel_file(file):
             )
 
     print(data)
+    await draw_certificate('images/ДХ.png', data)
+
 
 
