@@ -19,7 +19,10 @@ class Users(BaseModel):
 
 
 class Certificate(BaseModel):
-    certificate_id = BigIntegerField(primary_key=True)
+    certificate_id = CharField(primary_key=True)
+    certificate_category = CharField(max_length=100)
+    certificate_district = CharField(max_length=100)
+    certificate = TextField()
 
     class Meta:
         db_name = 'certificate'
